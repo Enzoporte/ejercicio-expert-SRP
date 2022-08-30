@@ -18,6 +18,7 @@ namespace SRP
             A7.ShelveBook(book2);
 
             Console.WriteLine(A7.Info());
+            Console.WriteLine(B3.Info());
 
 
             //book1.ShelveBook(book1,"A","7");

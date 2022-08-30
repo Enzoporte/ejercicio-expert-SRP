@@ -7,7 +7,9 @@ namespace SRP
     // Nueva clase biblioteca para almacenar libros 
     public class Estanteria 
     {
+        private ArrayList tituloLibros = new ArrayList();
         public ArrayList Libros = new ArrayList();
+        
         public string Sector { get ; }
         public string Shelf { get ; }
 
@@ -20,18 +22,17 @@ namespace SRP
         public void ShelveBook(Book book)
         {
             Libros.Add(book);
+            tituloLibros.Add(book.Title);
         }
 
         public string Info()
         {
-            StringBuilder stringLibros = new StringBuilder();
-            foreach (Book item in Libros)
+            StringBuilder stringTitulos = new StringBuilder();
+            foreach (String titulo in tituloLibros)
             {
-                stringLibros.AppendJoin(", ", item.Title);
+                stringTitulos.Append(titulo + ", ");
             }
-
-            return $"La estantería {this.Sector + this.Shelf}, guarda los libros {stringLibros}";
-
+            return $"La estantería {this.Sector + this.Shelf}, guarda los libros {stringTitulos.ToString()}";
         }
 
         
